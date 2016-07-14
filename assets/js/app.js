@@ -6,7 +6,7 @@ config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/view1'});
 }]);*/
 
-var myApp = angular.module('sample', ['ngRoute','ui.bootstrap']).run(function() {
+var myApp = angular.module('sample', ['ngRoute']).run(function() {
 });
 
 
@@ -16,6 +16,12 @@ myApp.config(['$routeProvider', function($routeProvider) {
 
 	$routeProvider.when('/', {
 		templateUrl: 'home/templates/home.html',
+		controller: 'HomeController',
+		// activetab: 'home'
+	});
+
+	$routeProvider.when('/registration', {
+		templateUrl: 'home/templates/register.html',
 		controller: 'HomeController',
 		// activetab: 'home'
 	});
