@@ -1,5 +1,6 @@
 <!-- Full Page Image Background Carousel Header -->
-<header id="myCarousel" class="carousel slide">
+
+<div id="myCarousel" class="carousel slide" ng-controller="HomeController">
 <!-- Indicators -->
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -24,10 +25,10 @@
             <div class="fill"></div>
         </div>
 
-        <div class="carousel-caption"><button type="button" value="registation">Registation</button></div>
+        <div class="carousel-caption"><a href="#/registration" class="button">Registation</a></div>
     </div>
 
     <!-- Controls -->
     <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="icon-prev"></span></a>
     <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="icon-next"></span></a>
-</header>
+</div>

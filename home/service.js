@@ -2,7 +2,7 @@
 service.js
 This service deals with the get post mothods for ajax call
 */
-app.factory('ajaxwebservice', function($http,$location) {
+myApp.factory('ajaxwebservice', function($http,$location) {
     //base url formation logic start
     var baseUrl = $location.protocol()+"://"+$location.host();
     if($location.port() != ""){

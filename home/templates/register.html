@@ -1,0 +1,103 @@
+<div class="workarea" ng-controller="RegistrationController"> 
+    <div class="container">
+        <div class="registration">
+            <h2>Register As</h2>
+            <div class="category">
+                <p> <input type="radio" name="gender" ng-model="regUser" value="1"><span>User</span></p>
+                <p><input type="radio" name="gender" ng-model="regUser" value="2"> <span>Old age organisation</span></p>
+            </div>
+            
+            <div class="form">
+                <div ng-show="regUser === '1'">
+                    <div>
+                        <p>Candidate details</p>
+                        <div class="form-group"><label>Name:</label><input type="text" placeholder="name"></div>
+                        <div class="form-group"><label>Age:</label><input type="text" placeholder="age"></div>
+                        <div class="form-group"><label>Address:</label><input type="text" placeholder="age"></div>
+                        <div class="form-group"><label>mobile number:</label><input type="text" placeholder="mobile number"></div>
+                        <div class="form-group"><label>id card type:</label>
+                            <select name="cars">
+                                <option value="votercard">Voter Card</option>
+                                <option value="aadhaarcard">Aadhaar Card</option>
+                                <option value="rationcard">Ration Card</option>
+                                <option value="pancard">PAN Card</option>
+                                <option value="passport">Passport</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>id card number:</label>
+                            <input type="text" placeholder="id card">
+                        </div>
+                        <div class="form-group">
+                            <label>gender:</label>
+                            <select name="cars">
+                            <option value="male">male</option>
+                            <option value="female">female</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Zipcode:</label>
+                            <input type="text" placeholder="Postal Code">
+                        </div>
+                    </div>
+
+                    <div>
+                        <p>Referal details</p>
+                        <div class="form-group">
+                            <label>Name:</label>
+                            <input type="text" placeholder="name">
+                        </div>
+                        <div class="form-group">
+                            <label>Age:</label>
+                            <input type="text" placeholder="age">
+                        </div>
+                        <div class="form-group">
+                            <label>Address:</label>
+                            <input type="text" placeholder="age">
+                        </div>
+                        <div class="form-group">
+                            <label>mobile number:</label>
+                            <input type="text" placeholder="mobile number">
+                        </div>
+                        <div class="form-group">
+                            <label>id card type:</label>
+                            <select name="cars">
+                                <option value="votercard">Voter Card</option>
+                                <option value="aadhaarcard">Aadhaar Card</option>
+                                <option value="rationcard">Ration Card</option>
+                                <option value="pancard">PAN Card</option>
+                                <option value="passport">Passport</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>id card number:</label>
+                            <input type="text" placeholder="id card">
+                        </div>
+                        <div class="form-group">
+                            <label>gender:</label>
+                            <select name="cars">
+                            <option value="male">male</option>
+                            <option value="female">female</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Zipcode:</label>
+                            <input type="text" placeholder="id card">
+                        </div>
+                    </div>
+                    <input type="submit" value="Submit">
+                </div>
+                
+                <div ng-show="regUser === '2'">
+                    <p>Organisation details</p>
+                    <div class="form-group"><label>Name:</label><input type="text" placeholder="name"></div>
+                    <div class="form-group"><label>location:</label><input type="text" placeholder="age"></div>
+                    <div class="form-group"><label>Capacity:</label><input type="text" placeholder="age"></div>
+                    <div class="form-group"><label>mobile number:</label><input type="text" placeholder="mobile number"></div>
+                    <div class="form-group"><label>Address:</label><input type="text" placeholder="age"></div>
+                    <input type="submit" value="Submit">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
