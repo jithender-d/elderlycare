@@ -308,8 +308,7 @@ input[type=search] {
   border: 1px solid #e0e0e0;
   /*text-transform:capitalize;*/
   color: #4e4f53;
-  height: 30px;
-  width: 96%;
+  height: 32px;
 }
 
 /* line 36, ../sass/components/_button.scss */
@@ -450,82 +449,233 @@ select option {
   position: relative;
   top: 14px;
 }
-/* line 17, ../sass/custom/_custom.scss */
+@media screen and (max-width: 767px) {
+  /* line 13, ../sass/custom/_custom.scss */
+  .navbar .navbar-nav {
+    top: 0px;
+  }
+}
+/* line 20, ../sass/custom/_custom.scss */
 .navbar .navbar-nav li a {
   background-color: transparent;
   color: #791f7f;
   font-size: 16px;
 }
+@media screen and (max-width: 767px) {
+  /* line 29, ../sass/custom/_custom.scss */
+  .navbar .navbar-header .navbar-toggle {
+    margin-top: 20px;
+  }
+  /* line 31, ../sass/custom/_custom.scss */
+  .navbar .navbar-header .navbar-toggle .icon-bar {
+    background-color: #791f7f;
+  }
+  /* line 35, ../sass/custom/_custom.scss */
+  .navbar .navbar-header .navbar-toggle:hover .icon-bar, .navbar .navbar-header .navbar-toggle:focus .icon-bar, .navbar .navbar-header .navbar-toggle:active .icon-bar {
+    background-color: #fff;
+  }
+}
+@media screen and (max-width: 767px) {
+  /* line 42, ../sass/custom/_custom.scss */
+  .navbar .navbar-collapse {
+    width: 100%;
+    height: auto;
+    float: left !important;
+    padding: 0px;
+    margin: 0px;
+    max-height: 100%;
+    overflow-y: hidden;
+  }
+  /* line 51, ../sass/custom/_custom.scss */
+  .navbar .navbar-collapse .navbar-nav {
+    width: 100%;
+    height: auto;
+    float: left;
+    margin: 0px;
+  }
+  /* line 57, ../sass/custom/_custom.scss */
+  .navbar .navbar-collapse .navbar-nav li a {
+    padding: 10px 0px;
+  }
+}
 
-/* line 26, ../sass/custom/_custom.scss */
+/* line 66, ../sass/custom/_custom.scss */
 .carousel {
   padding-top: 75px;
 }
-/* line 28, ../sass/custom/_custom.scss */
+/* line 68, ../sass/custom/_custom.scss */
 .carousel .carousel-caption {
   padding-bottom: 20%;
 }
-/* line 31, ../sass/custom/_custom.scss */
+/* line 71, ../sass/custom/_custom.scss */
 .carousel .carousel-control {
   background-image: none;
   opacity: 1;
 }
-/* line 39, ../sass/custom/_custom.scss */
+/* line 79, ../sass/custom/_custom.scss */
 .carousel .carousel-inner .item:nth-child(1) .fill {
   background-image: url(../images/banner1.jpg);
 }
-/* line 44, ../sass/custom/_custom.scss */
+/* line 84, ../sass/custom/_custom.scss */
 .carousel .carousel-inner .item:nth-child(2) .fill {
   background-image: url(../images/banner2.jpg);
 }
-/* line 49, ../sass/custom/_custom.scss */
+/* line 89, ../sass/custom/_custom.scss */
 .carousel .carousel-inner .item:nth-child(3) .fill {
   background-image: url(../images/banner4.jpg);
 }
 
-/* Background images are set within the HTML using inline CSS, not here */
-/* line 66, ../sass/custom/_custom.scss */
+/* line 97, ../sass/custom/_custom.scss */
 .workarea {
   width: 100%;
-  height: 100%;
+  height: auto;
   float: left;
   background-color: #d7d7d7;
-  padding-top: 75px;
+  margin-top: 75px;
 }
-/* line 73, ../sass/custom/_custom.scss */
+/* line 104, ../sass/custom/_custom.scss */
 .workarea .container .search {
   width: 100%;
   height: auto;
   float: left;
   padding: 15px;
 }
-/* line 79, ../sass/custom/_custom.scss */
-.workarea .container .search-list {
+/* line 109, ../sass/custom/_custom.scss */
+.workarea .container .search input {
+  width: 85%;
+  float: left;
+  margin-right: 12px;
+}
+/* line 114, ../sass/custom/_custom.scss */
+.workarea .container .search .search-list {
   width: 100%;
   height: auto;
   float: left;
   padding: 0px;
 }
-/* line 84, ../sass/custom/_custom.scss */
-.workarea .container .search-list li {
+/* line 119, ../sass/custom/_custom.scss */
+.workarea .container .search .search-list li {
   list-style: none;
   padding: 10px;
   border: 1px solid #791f7f;
   position: relative;
   margin: 10px 0px;
 }
-/* line 91, ../sass/custom/_custom.scss */
-.workarea .container .search-list li p {
+/* line 126, ../sass/custom/_custom.scss */
+.workarea .container .search .search-list li p {
   text-transform: capitalize;
 }
-/* line 94, ../sass/custom/_custom.scss */
-.workarea .container .search-list li button {
+/* line 129, ../sass/custom/_custom.scss */
+.workarea .container .search .search-list li button {
   position: absolute;
   top: 50%;
   right: 15px;
 }
+/* line 138, ../sass/custom/_custom.scss */
+.workarea .container .registration {
+  width: 75%;
+  height: auto;
+  float: none;
+  padding: 15px;
+  margin: 0px auto;
+  display: block;
+}
+@media screen and (max-width: 767px) {
+  /* line 138, ../sass/custom/_custom.scss */
+  .workarea .container .registration {
+    width: 100%;
+    padding: 15px 0px;
+  }
+}
+/* line 149, ../sass/custom/_custom.scss */
+.workarea .container .registration h2 {
+  margin: 20px 0px;
+  color: #791f7f;
+}
+/* line 153, ../sass/custom/_custom.scss */
+.workarea .container .registration .category {
+  width: 100%;
+  height: auto;
+  float: left;
+}
+/* line 157, ../sass/custom/_custom.scss */
+.workarea .container .registration .category p {
+  width: 50%;
+  float: left;
+  color: #4e4f53;
+}
+@media screen and (max-width: 767px) {
+  /* line 157, ../sass/custom/_custom.scss */
+  .workarea .container .registration .category p {
+    width: 100%;
+  }
+}
+/* line 164, ../sass/custom/_custom.scss */
+.workarea .container .registration .category p input {
+  margin: 5px;
+  cursor: pointer;
+}
+/* line 168, ../sass/custom/_custom.scss */
+.workarea .container .registration .category p span {
+  font-size: 16px;
+}
+/* line 173, ../sass/custom/_custom.scss */
+.workarea .container .registration .form {
+  width: 100%;
+  height: auto;
+  float: left;
+}
+/* line 177, ../sass/custom/_custom.scss */
+.workarea .container .registration .form p {
+  color: #4e4f53;
+  padding: 7px 0px;
+  font-size: 18px;
+  border-bottom: 1px solid #4e4f53;
+}
+/* line 183, ../sass/custom/_custom.scss */
+.workarea .container .registration .form form {
+  width: 100%;
+  height: auto;
+  float: left;
+}
+/* line 188, ../sass/custom/_custom.scss */
+.workarea .container .registration .form form .form-group {
+  width: 100%;
+  height: auto;
+  float: left;
+}
+/* line 192, ../sass/custom/_custom.scss */
+.workarea .container .registration .form form .form-group label {
+  text-transform: capitalize;
+}
+/* line 24, ../sass/utilities/_mixins.scss */
+.workarea .container .registration .form form .form-group input::-webkit-input-placeholder {
+  text-transform: capitalize;
+}
+/* line 24, ../sass/utilities/_mixins.scss */
+.workarea .container .registration .form form .form-group input:-moz-placeholder {
+  text-transform: capitalize;
+}
+/* line 24, ../sass/utilities/_mixins.scss */
+.workarea .container .registration .form form .form-group input::-moz-placeholder {
+  text-transform: capitalize;
+}
+/* line 24, ../sass/utilities/_mixins.scss */
+.workarea .container .registration .form form .form-group input:-ms-input-placeholder {
+  text-transform: capitalize;
+}
+/* line 201, ../sass/custom/_custom.scss */
+.workarea .container .registration .form form input[type=submit] {
+  margin: 15px 0px;
+}
+/* line 207, ../sass/custom/_custom.scss */
+.workarea .container .contact {
+  width: 100%;
+  height: 100%;
+  float: left;
+}
 
-/* line 107, ../sass/custom/_custom.scss */
+/* line 217, ../sass/custom/_custom.scss */
 footer {
   width: 100%;
   height: auto;
