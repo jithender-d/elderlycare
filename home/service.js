@@ -27,13 +27,34 @@ myApp.factory('ajaxwebservice', function($http,$location) {
     * it will give promise object of getpost service 
     */
     factory.getPost = function(ajaxmethod,data,url) {
-        return $http({
+        /*return $http({
+            url: url, 
             method: ajaxmethod,
-            cache: false,
+            data: 'grant_type=password&client_id=3MVG9ZL0ppGP5UrC3MHbP86G8oH_wQr7bZdNFleh3UC9ZM1SwtC4hTUrJ.YRywLf4_rfw6nLJYdqEYlJYJ18i&client_secret=2678223884336568441&username=ElderlyCare@Popcornapps.com&password=pop@12345duYlrjYafzhodOX6aWppN7qZU',
+            headers: {
+                 'Content-Type': 'application/x-www-form-urlencoded',
+                'Cache-Control': 'no-cache'
+            }
+        });*/
+
+        return $http({
+            url: url,
+            method: ajaxmethod,
             data: data,
-            url: baseUrl+''+url, 
-            headers: {'Content-Type': 'application/json'}
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Cache-Control': 'no-cache',
+            }
         })
+        .then(function(response) {
+            console.log('******************');
+            console.log(response);
+            return response;
+        });
+
+
+
+        
     };
     return factory;
 });
