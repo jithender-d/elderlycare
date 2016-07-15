@@ -10,15 +10,27 @@
             
             <div class="form">
                 <div ng-show="user">
+                    <form name="userForm" class="container-fluid" novalidate>
+                    <div class="error" ng-show="show_user"><span>{{error_msg_user}}</span></div>
                     <div>
                         <p>Candidate details</p>
-                        <div class="form-group"><label>Name:</label><input type="text" placeholder="name"></div>
-                        <div class="form-group"><label>Age:</label><input type="text" placeholder="age"></div>
-                        <div class="form-group"><label>Address:</label><input type="text" placeholder="age"></div>
-                        <div class="form-group"><label>mobile number:</label><input type="text" placeholder="mobile number"></div>
+                        <div class="form-group">
+                            <label>Name:</label>
+                            <input type="text" placeholder="name" ng-model="accountData.name" name="name" maxlength="150" required/></div>
+                        <div class="form-group">
+                            <label>Age:</label>
+                            <input type="text" placeholder="age" ng-model="accountData.age" name="age" maxlength="3" required/>
+                        </div>
+                        <div class="form-group">
+                            <label>Address:</label>
+                            <input type="text" placeholder="Address" ng-model="accountData.address" name="address" maxlength="300" required></div>
+                        <div class="form-group">
+                            <label>mobile number:</label>
+                            <input type="text" placeholder="mobile number" ng-model="accountData.mobile" name="mobile" minlength="10" maxlength="10" required>
+                        </div>
                         <div class="form-group"><label>id card type:</label>
-                            <select name="cars">
-                                <option value="votercard">Voter Card</option>
+                            <select ng-model="accountData.card" name="card" required>
+                                <option value="voterc   ard">Voter Card</option>
                                 <option value="aadhaarcard">Aadhaar Card</option>
                                 <option value="rationcard">Ration Card</option>
                                 <option value="pancard">PAN Card</option>
@@ -27,18 +39,18 @@
                         </div>
                         <div class="form-group">
                             <label>id card number:</label>
-                            <input type="text" placeholder="id card">
+                            <input type="text" placeholder="Id card" ng-model="accountData.cardnum" name="cardnum" minlength="10" maxlength="20" required>
                         </div>
                         <div class="form-group">
                             <label>gender:</label>
-                            <select name="cars">
+                            <select ng-model="accountData.gender" name="gender" required>
                             <option value="male">male</option>
                             <option value="female">female</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label>Zipcode:</label>
-                            <input type="text" placeholder="Postal Code">
+                            <input type="text" placeholder="Postal Code" ng-model="accountData.zipcode" name="zipcode" minlength="6" maxlength="6" required>
                         </div>
                     </div>
 
@@ -46,23 +58,23 @@
                         <p>Referal details</p>
                         <div class="form-group">
                             <label>Name:</label>
-                            <input type="text" placeholder="name">
+                            <input type="text" placeholder="name" ng-model="accountData.refname" name="refname" maxlength="150" required>
                         </div>
                         <div class="form-group">
                             <label>Age:</label>
-                            <input type="text" placeholder="age">
+                            <input type="text" placeholder="age" ng-model="accountData.refage" name="refage" maxlength="3" required>
                         </div>
                         <div class="form-group">
                             <label>Address:</label>
-                            <input type="text" placeholder="age">
+                            <input type="text" placeholder="address" ng-model="accountData.refaddrs" name="refaddrs" maxlength="300" required>
                         </div>
                         <div class="form-group">
                             <label>mobile number:</label>
-                            <input type="text" placeholder="mobile number">
+                            <input type="text" placeholder="mobile number" ng-model="accountData.refmobile" name="refmobile" minlength="10" maxlength="10" required>
                         </div>
                         <div class="form-group">
                             <label>id card type:</label>
-                            <select name="cars">
+                            <select ng-model="accountData.refidtype" name="refidtype" required>
                                 <option value="votercard">Voter Card</option>
                                 <option value="aadhaarcard">Aadhaar Card</option>
                                 <option value="rationcard">Ration Card</option>
@@ -72,21 +84,22 @@
                         </div>
                         <div class="form-group">
                             <label>id card number:</label>
-                            <input type="text" placeholder="id card">
+                            <input type="text" placeholder="Id card number" ng-model="accountData.refidcard" name="refidcard" minlength="10" maxlength="20" required>
                         </div>
                         <div class="form-group">
                             <label>gender:</label>
-                            <select name="cars">
-                            <option value="male">male</option>
-                            <option value="female">female</option>
+                            <select ng-model="accountData.refgender" name="refgender" required>
+                                <option value="male">male</option>
+                                <option value="female">female</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label>Zipcode:</label>
-                            <input type="text" placeholder="id card">
+                            <input type="text" placeholder="Zipcode" ng-model="accountData.refzipcode" name="refzipcode" minlength="6" maxlength="6" required>
                         </div>
                     </div>
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Submit" ng-click="validate_user()">
+                    </form>
                 </div>
                 
                 <div ng-show="organization">

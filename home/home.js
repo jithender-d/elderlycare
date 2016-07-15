@@ -56,6 +56,108 @@ myApp.controller('RegistrationController', function($scope) {
             alert('okk');
     	}
     }
+
+
+    $scope.validate_user = function () {
+       	$scope.error_msg_user = '';  //error messages store 
+        $scope.show_user = false; // error message display flag
+        $scope.sub_show_user = false; //submit flag
+
+        if($scope.userForm.name.$error.required){
+            $scope.error_msg_user = 'Please enter User name.';
+            $scope.show_user = true;
+            return false;
+        }else if($scope.userForm.age.$error.required){
+            $scope.error_msg_user = 'Please enter Age.';
+            $scope.show_user = true;
+            return false;
+        }else if($scope.userForm.address.required){
+            $scope.error_msg_user = 'Please enter Address.';
+            $scope.show_user = true;
+            return false;
+        }else if($scope.userForm.mobile.$error.required){
+            $scope.error_msg_user = 'Please enter Mobile number.';
+            $scope.show_user = true;
+            return false;
+        }else if($scope.userForm.mobile.$invalid){
+            $scope.error_msg_user = 'Mobile number should be of 10 digits.';
+            $scope.show_user = true;
+            return false;
+        }else if($scope.userForm.card.$error.required){
+            $scope.error_msg_user = 'Please select Id card type.';
+            $scope.show_user = true;
+            return false;
+        }else if($scope.userForm.cardnum.$invalid){
+            $scope.error_msg_user = 'Please enter Id card number.';
+            $scope.show_user = true;
+            return false;
+        }
+        else if($scope.userForm.cardnum.$invalid){
+            $scope.error_msg_user = 'Id card number length should less than 20 & gerater than 10';
+            $scope.show_user = true;
+            return false;
+        }else if($scope.userForm.gender.$error.required){
+            $scope.error_msg_user = 'Please select gender.';
+            $scope.show_user = true;
+            return false;
+        }else if($scope.userForm.zipcode.$error.required){
+            $scope.error_msg_user = 'Please enter zipcode.';
+            $scope.show_user = true;
+            return false;
+        }else if($scope.userForm.zipcode.$invalid){
+            $scope.error_msg_user = 'Zipcode length should be 6.';
+            $scope.show_user = true;
+            return false;
+        }else if($scope.userForm.refname.$error.required){
+            $scope.error_msg_user = 'Please enter referal name.';
+            $scope.show_user = true;
+            return false;
+        }else if($scope.userForm.refage.$error.required){
+            $scope.error_msg_user = 'Please enter referal age.';
+            $scope.show_user = true;
+            return false;
+        }else if($scope.userForm.refaddrs.$error.required){
+            $scope.error_msg_user = 'Please enter referal address.';
+            $scope.show_user = true;
+            return false;
+        }else if($scope.userForm.refmobile.$error.required){
+            $scope.error_msg_user = 'Please enter referal Mobile number.';
+            $scope.show_user = true;
+            return false;
+        }else if($scope.userForm.refmobile.$invalid){
+            $scope.error_msg_user = 'Referal mobile number should be of 10 digits.';
+            $scope.show_user = true;
+            return false;
+        }else if($scope.userForm.refidtype.$error.required){
+            $scope.error_msg_user = 'Please select refaral id card type.';
+            $scope.show_user = true;
+            return false;
+        }else if($scope.userForm.refidcard.$invalid){
+            $scope.error_msg_user = 'Please enter refaral id card number.';
+            $scope.show_user = true;
+            return false;
+        }
+        else if($scope.userForm.refidcard.$invalid){
+            $scope.error_msg_user = 'Referal id card number length should less than 20 & gerater than 10';
+            $scope.show_user = true;
+            return false;
+        }else if($scope.userForm.refgender.$error.required){
+            $scope.error_msg_user = 'Please select referal gender.';
+            $scope.show_user = true;
+            return false;
+        }else if($scope.userForm.refzipcode.$error.required){
+            $scope.error_msg_user = 'Please enter referal zipcode.';
+            $scope.show_user = true;
+            return false;
+        }else if($scope.userForm.refzipcode.$invalid){
+            $scope.error_msg_user = 'Referal zipcode length should be 6.';
+            $scope.show_user = true;
+            return false;
+        }else if ($scope.userForm.$valid) {
+            alert('okk');
+            console.log(accountData)
+    	}
+    }
     
 });
 
