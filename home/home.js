@@ -16,41 +16,50 @@ myApp.controller('RegistrationController', function($scope, ajaxwebservice, $rou
         $scope.sub_show = false; //submit flag
 
         if($scope.accountForm.name.$error.required){
-            $scope.error_msg = 'Please enter Organization name.';
+            $scope.error_msg = 'Please enter name.';
             $scope.show = true;
+        	$("html, body").animate({ scrollTop: 0 }, "slow");
             return false;
         }else if($scope.accountForm.name.$invalid){
-            $scope.error_msg = 'Organization name length should not be greater than 150.';
+            $scope.error_msg = 'Name length should not be greater than 150.';
             $scope.show = true;
+            $("html, body").animate({ scrollTop: 0 }, "slow");
             return false;
         }else if($scope.accountForm.location.$error.required){
-            $scope.error_msg = 'Please enter Location.';
+            $scope.error_msg = 'Please enter location.';
             $scope.show = true;
+            $("html, body").animate({ scrollTop: 0 }, "slow");
             return false;
         }else if($scope.accountForm.location.$invalid){
-            $scope.error_msg = 'location length should not be greater than 150.';
+            $scope.error_msg = 'Location length should not be greater than 150.';
             $scope.show = true;
+            $("html, body").animate({ scrollTop: 0 }, "slow");
             return false;
         }else if($scope.accountForm.mobile.$error.required){
-            $scope.error_msg = 'Please enter Mobile number.';
+            $scope.error_msg = 'Please enter mobile number.';
             $scope.show = true;
+            $("html, body").animate({ scrollTop: 0 }, "slow");
             return false;
         }else if($scope.accountForm.mobile.$invalid){
-            $scope.error_msg = 'Mobile number should be of 10 digits.';
+            $scope.error_msg = 'Please enter valid mobile number.';
             $scope.show = true;
+            $("html, body").animate({ scrollTop: 0 }, "slow");
             return false;
         }
         else if($scope.accountForm.address.$invalid){
-            $scope.error_msg = 'Please enter Address.';
+            $scope.error_msg = 'Please enter address.';
             $scope.show = true;
+            $("html, body").animate({ scrollTop: 0 }, "slow");
             return false;
         }else if($scope.accountForm.zipcode.$error.required){
-            $scope.error_msg = 'Please enter Zipcode.';
+            $scope.error_msg = 'Please enter zip code.';
             $scope.show = true;
+            $("html, body").animate({ scrollTop: 0 }, "slow");
             return false;
         }else if($scope.accountForm.zipcode.$invalid){
-        	$scope.error_msg = 'Zipcode length should be 6.';
+        	$scope.error_msg = 'Please enter valid zip code.';
             $scope.show = true;
+            $("html, body").animate({ scrollTop: 0 }, "slow");
             return false;
         }
         else if ($scope.accountForm.$valid) {
@@ -76,104 +85,114 @@ myApp.controller('RegistrationController', function($scope, ajaxwebservice, $rou
         $scope.sub_show_user = false; //submit flag
 
         if($scope.userForm.name.$error.required){
-            $scope.error_msg_user = 'Please enter User name.';
+            $scope.error_msg_user = 'Please enter name.';
+            $("html, body").animate({ scrollTop: 0 }, "slow");
             $scope.show_user = true;
             return false;
         }else if($scope.userForm.age.$error.required){
-            $scope.error_msg_user = 'Please enter Age.';
+            $scope.error_msg_user = 'Please enter age.';
+            $("html, body").animate({ scrollTop: 0 }, "slow");
             $scope.show_user = true;
             return false;
-        }
-        else if($scope.userForm.address.required){
-            $scope.error_msg_user = 'Please enter Address.';
+        }else if($scope.userForm.age.$invalid){
+            $scope.error_msg_user = 'Please enter valid age.';
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            $scope.show_user = true;
+            return false;
+        }else if($scope.userForm.address.required){
+            $scope.error_msg_user = 'Please enter address.';
+             $("html, body").animate({ scrollTop: 0 }, "slow");
             $scope.show_user = true;
             return false;
         }else if($scope.userForm.mobile.$error.required){
-            $scope.error_msg_user = 'Please enter Mobile number.';
+            $scope.error_msg_user = 'Please enter mobile number.';
+             $("html, body").animate({ scrollTop: 0 }, "slow");
             $scope.show_user = true;
             return false;
         }else if($scope.userForm.mobile.$invalid){
-            $scope.error_msg_user = 'Mobile number should be of 10 digits.';
+            $scope.error_msg_user = 'Please enter valid mobile number.';
+             $("html, body").animate({ scrollTop: 0 }, "slow");
             $scope.show_user = true;
             return false;
         }else if($scope.userForm.card.$error.required){
             $scope.error_msg_user = 'Please select Id card type.';
+             $("html, body").animate({ scrollTop: 0 }, "slow");
             $scope.show_user = true;
             return false;
         }else if($scope.userForm.cardnum.$invalid){
             $scope.error_msg_user = 'Please enter Id card number.';
+             $("html, body").animate({ scrollTop: 0 }, "slow");
             $scope.show_user = true;
             return false;
         }
         else if($scope.userForm.cardnum.$invalid){
-            $scope.error_msg_user = 'Id card number length should less than 20 & gerater than 10';
+            $scope.error_msg_user = 'Please enter valid Id card number.';
+             $("html, body").animate({ scrollTop: 0 }, "slow");
             $scope.show_user = true;
             return false;
         }else if($scope.userForm.gender.$error.required){
             $scope.error_msg_user = 'Please select gender.';
+             $("html, body").animate({ scrollTop: 0 }, "slow");
             $scope.show_user = true;
             return false;
         }else if($scope.userForm.zipcode.$error.required){
-            $scope.error_msg_user = 'Please enter zipcode.';
+            $scope.error_msg_user = 'Please enter zip code.';
+             $("html, body").animate({ scrollTop: 0 }, "slow");
             $scope.show_user = true;
             return false;
         }else if($scope.userForm.zipcode.$invalid){
-            $scope.error_msg_user = 'Zipcode length should be 6.';
+            $scope.error_msg_user = 'Please enter valid zip code.';
+             $("html, body").animate({ scrollTop: 0 }, "slow");
             $scope.show_user = true;
             return false;
         }else if($scope.userForm.refname.$error.required){
-            $scope.error_msg_user = 'Please enter referal name.';
+            $scope.error_msg_user = 'Please enter referral name.';
+             $("html, body").animate({ scrollTop: 0 }, "slow");
             $scope.show_user = true;
             return false;
-        }/*else if($scope.userForm.refage.$error.required){
-            $scope.error_msg_user = 'Please enter referal age.';
-            $scope.show_user = true;
-            return false;
-        }*/else if($scope.userForm.refaddrs.$error.required){
-            $scope.error_msg_user = 'Please enter referal address.';
+        }else if($scope.userForm.refaddrs.$error.required){
+            $scope.error_msg_user = 'Please enter referral address.';
+            $("html, body").animate({ scrollTop: 0 }, "slow");
             $scope.show_user = true;
             return false;
         }else if($scope.userForm.refmobile.$error.required){
-            $scope.error_msg_user = 'Please enter referal Mobile number.';
+            $scope.error_msg_user = 'Please enter referral mobile number.';
+             $("html, body").animate({ scrollTop: 0 }, "slow");
             $scope.show_user = true;
             return false;
         }else if($scope.userForm.refmobile.$invalid){
-            $scope.error_msg_user = 'Referal mobile number should be of 10 digits.';
+            $scope.error_msg_user = 'Please enter valid referral mobile number.';
+             $("html, body").animate({ scrollTop: 0 }, "slow");
             $scope.show_user = true;
             return false;
         }else if($scope.userForm.refidtype.$error.required){
-            $scope.error_msg_user = 'Please select refaral id card type.';
+            $scope.error_msg_user = 'Please select referral Id card type.';
+             $("html, body").animate({ scrollTop: 0 }, "slow");
             $scope.show_user = true;
             return false;
-        }else if($scope.userForm.refidcard.$invalid){
-            $scope.error_msg_user = 'Please enter refaral id card number.';
+        }else if($scope.userForm.refidcard.$error.required){
+            $scope.error_msg_user = 'Please enter referral Id card number.';
+             $("html, body").animate({ scrollTop: 0 }, "slow");
             $scope.show_user = true;
             return false;
         }
         else if($scope.userForm.refidcard.$invalid){
-            $scope.error_msg_user = 'Referal id card number length should less than 20 & gerater than 10';
+            $scope.error_msg_user = 'Please enter valid Id card number.';
+             $("html, body").animate({ scrollTop: 0 }, "slow");
             $scope.show_user = true;
             return false;
-        }/*else if($scope.userForm.refgender.$error.required){
-            $scope.error_msg_user = 'Please select referal gender.';
-            $scope.show_user = true;
-            return false;
-        }*/else if($scope.userForm.refzipcode.$error.required){
-            $scope.error_msg_user = 'Please enter referal zipcode.';
+        }else if($scope.userForm.refzipcode.$error.required){
+            $scope.error_msg_user = 'Please enter referral zip code.';
+             $("html, body").animate({ scrollTop: 0 }, "slow");
             $scope.show_user = true;
             return false;
         }else if($scope.userForm.refzipcode.$invalid){
-            $scope.error_msg_user = 'Referal zipcode length should be 6.';
+            $scope.error_msg_user = 'Please enter valid referral zip code.';
+             $("html, body").animate({ scrollTop: 0 }, "slow");
             $scope.show_user = true;
             return false;
         }else if ($scope.userForm.$valid) {
         	var url = 'https://ap2.salesforce.com/services/apexrest/createCandidate';
-            // $scope.accountData.candCity = 'Hyderabad';
-            // $scope.accountData.candCountry = 'India';
-            // $scope.accountData.candState = 'TS';
-            // $scope.accountData.referralCity = 'Hyderabad';
-            // $scope.accountData.referralCountry = 'India';
-            // $scope.accountData.referralState = 'TS';
             $scope.accountData.homeId = $routeParams.homeId;
             var token = localStorage.getItem('authInfo');
             var postData = {"postd": $scope.accountData,"url":url,"met":'POST',"token":token};
