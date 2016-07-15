@@ -20,12 +20,16 @@ myApp.config(['$routeProvider', function($routeProvider) {
 		// activetab: 'home'
 	});
 
-	$routeProvider.when('/registration', {
+	$routeProvider.when('/registrationUser', {
 		templateUrl: 'home/templates/register.html',
 		controller: 'RegistrationController',
 		// activetab: 'home'
 	});
-
+	$routeProvider.when('/registrationOrganization', {
+		templateUrl: 'home/templates/register.html',
+		controller: 'RegistrationController',
+		// activetab: 'home'
+	});
 	$routeProvider.when('/search', {
 		templateUrl: 'home/templates/search.html',
 		controller: 'SearchController',
@@ -41,4 +45,20 @@ myApp.config(['$routeProvider', function($routeProvider) {
 	
 
 	$routeProvider.otherwise({redirectTo: '/home'});
-}]);
+}])
+.run(function ($rootScope, $location, ajaxwebservice,$templateCache) {
+    $rootScope.organization = false;
+    $rootScope.user = false;
+    //logic to apply title in header
+    $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+        if(current.$$route && ($location.path() == '/registrationOrganization')){
+            $rootScope.organization = true;
+    		$rootScope.user = false;
+        }else if(current.$$route && ($location.path() == '/registrationUser')){
+        	$rootScope.organization = false;
+    		$rootScope.user = true;
+        }
+    });
+
+}); 
+//routes end

@@ -47,8 +47,6 @@ myApp.factory('ajaxwebservice', function($http,$location) {
             }
         })
         .then(function(response) {
-            console.log('******************');
-            console.log(response);
             return response;
         });
 

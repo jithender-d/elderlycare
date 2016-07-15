@@ -17,5 +17,6 @@ myApp.controller('RegistrationController', function($scope) {
 myApp.controller('SearchController', function($scope, ajaxwebservice) {
 	var url = 'https://ap2.salesforce.com/services/apexrest/EC_ElderCare';
 	var data = 'authorization:OAuth00D28000001dZef!ARcAQHHZuO5PCQTt.ziv8mKUjATr6yLBS.HDKtAYUl5tF8UNkPJDGalKKA1Qc.XkFeSahTkWoL0CXjPNtROyw_2WY0IjWAwv'
-	var res = ajaxwebservice.getPost('POST',data,url);	
+	var res = ajaxwebservice.getPost('POST',data,url);
+	console.log(res);	
 });
