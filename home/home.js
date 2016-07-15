@@ -8,7 +8,7 @@ myApp.controller('HomeController', function($scope, ajaxwebservice) {
 	$scope.getAccessToken();
 });
 
-myApp.controller('RegistrationController', function($scope) {
+myApp.controller('RegistrationController', function($scope, ajaxwebservice) {
 	$scope.regUser = '1';
 	$scope.accountData = {};
 	$scope.validate_organization = function () {
@@ -16,7 +16,7 @@ myApp.controller('RegistrationController', function($scope) {
         $scope.show = false; // error message display flag
         $scope.sub_show = false; //submit flag
 
-        if($scope.accountForm.candName.$error.required){
+        if($scope.accountForm.name.$error.required){
             $scope.error_msg = 'Please enter Organization name.';
             $scope.show = true;
             return false;
@@ -58,7 +58,14 @@ myApp.controller('RegistrationController', function($scope) {
         	var url = 'https://ap2.salesforce.com/services/apexrest/createHome';
             $scope.org.country = 'India';
             $scope.org.state = 'TS';
-            var subOrg = ajaxwebservice.getPost('POST',token,url,postdata);
+           	
+           	var token = localStorage.getItem('authInfo');
+            var postData = {"postd": $scope.org,"url":url,"met":'POST',"token":token};
+            var subUser = ajaxwebservice.getPost(postData, 2).then(function(response) {
+	            $scope.homes = response.data;
+	            console.log($scope.homes);
+	            console.log($scope.homes.status);
+	        });
             
     	}
     }
@@ -167,7 +174,13 @@ myApp.controller('RegistrationController', function($scope) {
             $scope.accountData.referralCity = 'Hyderabad';
             $scope.accountData.referralCountry = 'India';
             $scope.accountData.referralState = 'TS';
-            var subUser = ajaxwebservice.getPost('POST',token,url,postdata);
+
+           	var token = localStorage.getItem('authInfo');
+            var postData = {"postd": $scope.accountData,"url":url,"met":'POST',"token":token};
+            var subUser = ajaxwebservice.getPost(postData, 3).then(function(response) {
+	            $scope.homes = response.data;
+	            console.log($scope.homes);
+	        });
     	}
     }
     
@@ -182,8 +195,8 @@ myApp.controller('SearchController', function($scope, ajaxwebservice) {
 		var postData = {"postd":{'zipcode':dat},"url":url,"met":'POST',"token":token};
        	var res = ajaxwebservice.getPost(postData, 2).then(function(response) {
             $scope.homes = response.data;
+            console.log($scope.homes);
         });
-       	
 	};
 
 	$scope.searchHomes();
