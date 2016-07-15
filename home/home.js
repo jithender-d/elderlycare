@@ -177,9 +177,13 @@ myApp.controller('SearchController', function($scope, ajaxwebservice) {
 	var url = 'https://ap2.salesforce.com/services/apexrest/EC_ElderCare';
 	
 	$scope.searchHomes = function(zipcode) {
-		var postdata = null;
-	  		
-		var res = ajaxwebservice.getPost('POST',url,postdata);
+		var token = localStorage.getItem('authInfo');
+		var dat = null;
+		var postData = {"postd":{'zipcode':dat},"url":url,"met":'POST',"token":token};
+       	var res = ajaxwebservice.getPost(postData, 2).then(function(response) {
+            $scope.homes = response.data;
+        });
+       	
 	};
 
 	$scope.searchHomes();

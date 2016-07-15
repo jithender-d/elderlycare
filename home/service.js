@@ -5,24 +5,13 @@ This service deals with the get post mothods for ajax call
 myApp.factory('ajaxwebservice', function($http,$location) {
     var factory = {}; 
     
-    factory.getPost = function(ajaxmethod,url, dat) {
-        var token = localStorage.getItem('authInfo');
-
-        var postData = {"postd":{'zipcode':dat},"url":url,"met":'POST',"token":token};
-        // postData.postd = dat;
-        // postData.url = url;
-        // postData.met = 'POST';
-        // postData.token = token;
+    factory.getPost = function(dat, flag) {
         return $http({
-            url: 'http://localhost/accessToken.php?flag=2',
-            data: JSON.stringify(postData),
+            url: 'http://localhost/accessToken.php?flag='+flag,
+            data: JSON.stringify(dat),
             method: 'POST'
         })
-        .then(function(response) {
-            console.log(response.data);
-            // return response;
-
-        });
+        
     };
 
     factory.getAccessToken = function() {
