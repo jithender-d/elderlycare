@@ -90,13 +90,29 @@
                 </div>
                 
                 <div ng-show="organization">
+                    <form name="accountForm" class="container-fluid" novalidate>
+                    <div class="error" ng-show="show"><span>{{error_msg}}</span></div>
                     <p>Organisation details</p>
-                    <div class="form-group"><label>Name:</label><input type="text" placeholder="name"></div>
-                    <div class="form-group"><label>location:</label><input type="text" placeholder="age"></div>
-                    <div class="form-group"><label>Capacity:</label><input type="text" placeholder="age"></div>
-                    <div class="form-group"><label>mobile number:</label><input type="text" placeholder="mobile number"></div>
-                    <div class="form-group"><label>Address:</label><input type="text" placeholder="age"></div>
-                    <input type="submit" value="Submit">
+                    <div class="form-group">
+                        <label>Name:</label>
+                        <input type="text" ng-model="org.name" placeholder="name" name="name" maxlength="150" required/>
+                    </div>
+                    <div class="form-group">
+                        <label>location:</label>
+                        <input type="text" placeholder="location" ng-model="org.location" name="location" maxlength="150" required/>
+                    </div>
+                    <div class="form-group">
+                        <label>Capacity:</label>
+                        <input type="text" placeholder="Capacity" ng-model="org.capacity" name="capacity" maxlength="4" required></div>
+                    <div class="form-group">
+                        <label>mobile number:</label>
+                        <input type="text" placeholder="mobile number" ng-model="org.mobile" name="mobile" minlength="10" maxlength="10" required> 
+                    </div>
+                    <div class="form-group">
+                        <label>Address:</label>
+                        <input type="text" placeholder="Address" ng-model="org.address" name="address" maxlength="150" required>
+                    </div>
+                    <input type="submit" value="Submit" ng-click="validate_organization()">
                 </div>
             </div>
         </div>
