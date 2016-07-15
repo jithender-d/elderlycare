@@ -193,15 +193,13 @@ myApp.controller('SearchController', function($scope, ajaxwebservice) {
 		var token = localStorage.getItem('authInfo');
 		var dat = null;
 		if($scope.postalCode !== undefined) {
-			console.log('jith');
 			dat = $scope.postalCode;
 		}
 		var postData = {"postd":{'zipcode':dat},"url":url,"met":'POST',"token":token};
        	var res = ajaxwebservice.getPost(postData, 2).then(function(response) {
             $scope.homes = response.data;
         });
-       	
-	};
+    };
 
 	$scope.searchHomes();
 	

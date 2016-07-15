@@ -49,7 +49,6 @@ myApp.config(['$routeProvider', function($routeProvider) {
 .run(function ($rootScope, $location, ajaxwebservice,$templateCache) {
     $rootScope.organization = false;
     $rootScope.user = false;
-    $rootScope.footer = true;
     
     $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
         if(current.$$route && ($location.path().indexOf('registrationOrganization') > -1)){
@@ -59,9 +58,7 @@ myApp.config(['$routeProvider', function($routeProvider) {
         	$rootScope.organization = false;
     		$rootScope.user = true;
         }
-        if(current.$$route && ($location.path() == '/home')){
-        	$rootScope.footer = false;
-        }
+        
     });
 
 }); 
