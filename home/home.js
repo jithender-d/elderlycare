@@ -63,7 +63,7 @@ myApp.controller('RegistrationController', function($scope, ajaxwebservice, $rou
             var subUser = ajaxwebservice.getPost(postData, 2).then(function(response) {
 	            $scope.homes = response.data;
 	            alert('Old Age Organization Created Successfully.')
-	            location.href = '/home';
+	            location.href = '#/home';
 	        });
             
     	}
@@ -83,7 +83,8 @@ myApp.controller('RegistrationController', function($scope, ajaxwebservice, $rou
             $scope.error_msg_user = 'Please enter Age.';
             $scope.show_user = true;
             return false;
-        }else if($scope.userForm.address.required){
+        }
+        else if($scope.userForm.address.required){
             $scope.error_msg_user = 'Please enter Address.';
             $scope.show_user = true;
             return false;
@@ -124,11 +125,11 @@ myApp.controller('RegistrationController', function($scope, ajaxwebservice, $rou
             $scope.error_msg_user = 'Please enter referal name.';
             $scope.show_user = true;
             return false;
-        }else if($scope.userForm.refage.$error.required){
+        }/*else if($scope.userForm.refage.$error.required){
             $scope.error_msg_user = 'Please enter referal age.';
             $scope.show_user = true;
             return false;
-        }else if($scope.userForm.refaddrs.$error.required){
+        }*/else if($scope.userForm.refaddrs.$error.required){
             $scope.error_msg_user = 'Please enter referal address.';
             $scope.show_user = true;
             return false;
@@ -153,11 +154,11 @@ myApp.controller('RegistrationController', function($scope, ajaxwebservice, $rou
             $scope.error_msg_user = 'Referal id card number length should less than 20 & gerater than 10';
             $scope.show_user = true;
             return false;
-        }else if($scope.userForm.refgender.$error.required){
+        }/*else if($scope.userForm.refgender.$error.required){
             $scope.error_msg_user = 'Please select referal gender.';
             $scope.show_user = true;
             return false;
-        }else if($scope.userForm.refzipcode.$error.required){
+        }*/else if($scope.userForm.refzipcode.$error.required){
             $scope.error_msg_user = 'Please enter referal zipcode.';
             $scope.show_user = true;
             return false;
@@ -167,20 +168,18 @@ myApp.controller('RegistrationController', function($scope, ajaxwebservice, $rou
             return false;
         }else if ($scope.userForm.$valid) {
         	var url = 'https://ap2.salesforce.com/services/apexrest/createCandidate';
-            $scope.accountData.candCity = 'Hyderabad';
-            $scope.accountData.candCountry = 'India';
-            $scope.accountData.candState = 'TS';
-            $scope.accountData.referralCity = 'Hyderabad';
-            $scope.accountData.referralCountry = 'India';
-            $scope.accountData.referralState = 'TS';
+            // $scope.accountData.candCity = 'Hyderabad';
+            // $scope.accountData.candCountry = 'India';
+            // $scope.accountData.candState = 'TS';
+            // $scope.accountData.referralCity = 'Hyderabad';
+            // $scope.accountData.referralCountry = 'India';
+            // $scope.accountData.referralState = 'TS';
             $scope.accountData.homeId = $routeParams.homeId;
-            console.log('kdjsfjkdskjf');
-           	var token = localStorage.getItem('authInfo');
+            var token = localStorage.getItem('authInfo');
             var postData = {"postd": $scope.accountData,"url":url,"met":'POST',"token":token};
             var subUser = ajaxwebservice.getPost(postData, 2).then(function(response) {
-            	console.log(response);
-	            alert('User joined successfully.');
-	            location.href = '/home';
+            	alert('User joined successfully.');
+	            location.href = '#/home';
 	        });
     	}
     }
