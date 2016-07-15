@@ -58,9 +58,11 @@ myApp.controller('RegistrationController', function($scope) {
             return false;
         }
         else if ($scope.accountForm.$valid) {
+        	var url = 'https://ap2.salesforce.com/services/apexrest/createHome';
             $scope.org.country = 'India';
             $scope.org.state = 'TS';
-            console.log($scope.org);
+            var subOrg = ajaxwebservice.getPost('POST',token,url,postdata);
+            
     	}
     }
 
@@ -168,7 +170,7 @@ myApp.controller('RegistrationController', function($scope) {
             $scope.accountData.referralCity = 'Hyderabad';
             $scope.accountData.referralCountry = 'India';
             $scope.accountData.referralState = 'TS';
-            var res = ajaxwebservice.getPost('POST',token,url,postdata);
+            var subUser = ajaxwebservice.getPost('POST',token,url,postdata);
     	}
     }
     
