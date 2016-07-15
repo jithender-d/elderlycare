@@ -1,0 +1,10 @@
+/* Scss Document */
+
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+

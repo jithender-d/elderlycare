@@ -1,0 +1,28 @@
+
+//get the css3 mixins
+@import "compass/css3";
+@import "normalize";
+
+//get the base styles
+@import "base/**/*" ;
+
+//get the utilities styles
+@import "utilities/**/*" ;
+
+//get the component styles
+@import "components/**/*" ;
+
+//get the custom styles
+@import "custom/**/*";
+
+
+
+
+
+
+
+
+
+
+
+

@@ -49,6 +49,7 @@ myApp.config(['$routeProvider', function($routeProvider) {
 .run(function ($rootScope, $location, ajaxwebservice,$templateCache) {
     $rootScope.organization = false;
     $rootScope.user = false;
+     $rootScope.footer = true;
     //logic to apply title in header
     $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
         if(current.$$route && ($location.path() == '/registrationOrganization')){
@@ -57,6 +58,9 @@ myApp.config(['$routeProvider', function($routeProvider) {
         }else if(current.$$route && ($location.path() == '/registrationUser')){
         	$rootScope.organization = false;
     		$rootScope.user = true;
+        }
+        if(current.$$route && ($location.path() == '/home')){
+        	$rootScope.footer = false;
         }
     });
 

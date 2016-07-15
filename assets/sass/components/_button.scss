@@ -1,0 +1,108 @@
+button, input[type=submit], .button{
+	border:2px solid $base-color;
+	font-family:$base-font;
+	padding:10px 20px; 
+	background:none;
+	font-weight:700; 
+	cursor:pointer;
+	background:$base-color;
+	color:$white;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+	&:hover, &.active, &:focus{
+		background:$base-color;
+		border:2px solid $base-color;
+		color:$white;
+		outline:none;
+	} 
+	 @media screen and (max-width:$break-xs) {
+		padding:5px 10px;
+		font-size: 14px;  
+	 }
+}
+
+input[type=search] {
+    border-radius: 0px;
+    background-image: url(../images/magnifier.png) !important;
+    background-repeat: no-repeat;
+    background-position: 1% 50%;
+    background-size: 23px 20px;
+    padding: 6px 6px 6px 35px;
+    margin: 0px 0px;
+	 border:1px solid #e0e0e0;
+	/*text-transform:capitalize;*/
+	color:$gray3;
+	height: 32px;
+   @media screen and (max-width:$break-xs) {
+	    background-position: 2% 50%;
+	}
+}
+input[type="email"]{
+	text-transform:lowercase;
+	width:100%;
+	border:1px solid #e0e0e0;
+	padding:6px;
+	color:$gray3;
+	height: 40px;
+	border-radius:0px;
+	@include placeholder {
+	  color: $gray3;
+	}
+}
+input[type="text"],input[type="number"]{
+	width:100%;
+	border:1px solid #e0e0e0;
+	/*text-transform:capitalize;*/
+	padding:6px;
+	color:$gray3;
+	height: 40px;
+	border-radius:0px;
+	@include placeholder {
+	  color: $gray3;
+	}
+}
+input[disabled] {
+    cursor: default;
+	width:100%;
+	border:1px solid #e0e0e0;
+	text-transform:capitalize;
+	background-color:$white;
+	padding:6px;
+	color:$gray3;
+	height: 40px;
+	border-radius:0px;
+	@include placeholder {
+	  color: $gray3;
+	}
+}
+textarea{
+	width:100%;
+	border:1px solid #e0e0e0;
+	text-transform:capitalize;
+	padding:6px;
+	color:$gray3;
+	border-radius:0px !important;
+	box-shadow:none ;
+	border:1px solid $base-border !important;
+}
+select{
+	width:100%;
+	border:1px solid #e0e0e0;
+	text-transform:capitalize;
+	background-color:$white;
+	padding:6px;
+	color:$gray3;
+	height: 40px;
+	border-radius:0px;
+	cursor:pointer;
+	option {
+		font-weight: normal;
+		display: block;		
+   		font-family: inherit;
+		padding: 5px;
+		font-size:14px;
+		min-height:auto;
+		white-space:normal;
+	}
+}

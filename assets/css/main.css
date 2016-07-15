@@ -295,8 +295,15 @@ button:hover, button.active, button:focus, input[type=submit]:hover, input[type=
   color: #fff;
   outline: none;
 }
+@media screen and (max-width: 767px) {
+  /* line 1, ../sass/components/_button.scss */
+  button, input[type=submit], .button {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+}
 
-/* line 21, ../sass/components/_button.scss */
+/* line 25, ../sass/components/_button.scss */
 input[type=search] {
   border-radius: 0px;
   background-image: url(../images/magnifier.png) !important;
@@ -310,8 +317,14 @@ input[type=search] {
   color: #4e4f53;
   height: 32px;
 }
+@media screen and (max-width: 767px) {
+  /* line 25, ../sass/components/_button.scss */
+  input[type=search] {
+    background-position: 2% 50%;
+  }
+}
 
-/* line 36, ../sass/components/_button.scss */
+/* line 41, ../sass/components/_button.scss */
 input[type="email"] {
   text-transform: lowercase;
   width: 100%;
@@ -338,7 +351,7 @@ input[type="email"]:-ms-input-placeholder {
   color: #4e4f53;
 }
 
-/* line 48, ../sass/components/_button.scss */
+/* line 53, ../sass/components/_button.scss */
 input[type="text"], input[type="number"] {
   width: 100%;
   border: 1px solid #e0e0e0;
@@ -365,7 +378,7 @@ input[type="text"]:-ms-input-placeholder, input[type="number"]:-ms-input-placeho
   color: #4e4f53;
 }
 
-/* line 60, ../sass/components/_button.scss */
+/* line 65, ../sass/components/_button.scss */
 input[disabled] {
   cursor: default;
   width: 100%;
@@ -394,7 +407,7 @@ input[disabled]:-ms-input-placeholder {
   color: #4e4f53;
 }
 
-/* line 74, ../sass/components/_button.scss */
+/* line 79, ../sass/components/_button.scss */
 textarea {
   width: 100%;
   border: 1px solid #e0e0e0;
@@ -406,7 +419,7 @@ textarea {
   border: 1px solid #791f7f !important;
 }
 
-/* line 84, ../sass/components/_button.scss */
+/* line 89, ../sass/components/_button.scss */
 select {
   width: 100%;
   border: 1px solid #e0e0e0;
@@ -418,7 +431,7 @@ select {
   border-radius: 0px;
   cursor: pointer;
 }
-/* line 94, ../sass/components/_button.scss */
+/* line 99, ../sass/components/_button.scss */
 select option {
   font-weight: normal;
   display: block;
@@ -440,43 +453,49 @@ select option {
   height: auto;
   padding: 7px;
 }
-/* line 9, ../sass/custom/_custom.scss */
+@media screen and (max-width: 767px) {
+  /* line 6, ../sass/custom/_custom.scss */
+  .navbar .navbar-brand {
+    padding: 7px 15px;
+  }
+}
+/* line 12, ../sass/custom/_custom.scss */
 .navbar .navbar-brand img {
   width: 50px;
 }
-/* line 13, ../sass/custom/_custom.scss */
+/* line 16, ../sass/custom/_custom.scss */
 .navbar .navbar-nav {
   position: relative;
   top: 14px;
 }
 @media screen and (max-width: 767px) {
-  /* line 13, ../sass/custom/_custom.scss */
+  /* line 16, ../sass/custom/_custom.scss */
   .navbar .navbar-nav {
     top: 0px;
   }
 }
-/* line 20, ../sass/custom/_custom.scss */
+/* line 23, ../sass/custom/_custom.scss */
 .navbar .navbar-nav li a {
   background-color: transparent;
   color: #791f7f;
   font-size: 16px;
 }
 @media screen and (max-width: 767px) {
-  /* line 29, ../sass/custom/_custom.scss */
+  /* line 32, ../sass/custom/_custom.scss */
   .navbar .navbar-header .navbar-toggle {
     margin-top: 20px;
   }
-  /* line 31, ../sass/custom/_custom.scss */
+  /* line 34, ../sass/custom/_custom.scss */
   .navbar .navbar-header .navbar-toggle .icon-bar {
     background-color: #791f7f;
   }
-  /* line 35, ../sass/custom/_custom.scss */
+  /* line 38, ../sass/custom/_custom.scss */
   .navbar .navbar-header .navbar-toggle:hover .icon-bar, .navbar .navbar-header .navbar-toggle:focus .icon-bar, .navbar .navbar-header .navbar-toggle:active .icon-bar {
     background-color: #fff;
   }
 }
 @media screen and (max-width: 767px) {
-  /* line 42, ../sass/custom/_custom.scss */
+  /* line 45, ../sass/custom/_custom.scss */
   .navbar .navbar-collapse {
     width: 100%;
     height: auto;
@@ -486,46 +505,46 @@ select option {
     max-height: 100%;
     overflow-y: hidden;
   }
-  /* line 51, ../sass/custom/_custom.scss */
+  /* line 54, ../sass/custom/_custom.scss */
   .navbar .navbar-collapse .navbar-nav {
     width: 100%;
     height: auto;
     float: left;
     margin: 0px;
   }
-  /* line 57, ../sass/custom/_custom.scss */
+  /* line 60, ../sass/custom/_custom.scss */
   .navbar .navbar-collapse .navbar-nav li a {
     padding: 10px 0px;
   }
 }
 
-/* line 66, ../sass/custom/_custom.scss */
+/* line 69, ../sass/custom/_custom.scss */
 .carousel {
   padding-top: 75px;
 }
-/* line 68, ../sass/custom/_custom.scss */
+/* line 71, ../sass/custom/_custom.scss */
 .carousel .carousel-caption {
   padding-bottom: 20%;
 }
-/* line 71, ../sass/custom/_custom.scss */
+/* line 74, ../sass/custom/_custom.scss */
 .carousel .carousel-control {
   background-image: none;
   opacity: 1;
 }
-/* line 79, ../sass/custom/_custom.scss */
+/* line 82, ../sass/custom/_custom.scss */
 .carousel .carousel-inner .item:nth-child(1) .fill {
   background-image: url(../images/banner1.jpg);
 }
-/* line 84, ../sass/custom/_custom.scss */
+/* line 87, ../sass/custom/_custom.scss */
 .carousel .carousel-inner .item:nth-child(2) .fill {
   background-image: url(../images/banner2.jpg);
 }
-/* line 89, ../sass/custom/_custom.scss */
+/* line 92, ../sass/custom/_custom.scss */
 .carousel .carousel-inner .item:nth-child(3) .fill {
-  background-image: url(../images/banner4.jpg);
+  background-image: url(../images/banner3.jpg);
 }
 
-/* line 97, ../sass/custom/_custom.scss */
+/* line 100, ../sass/custom/_custom.scss */
 .workarea {
   width: 100%;
   height: auto;
@@ -533,45 +552,67 @@ select option {
   background-color: #d7d7d7;
   margin-top: 75px;
 }
-/* line 104, ../sass/custom/_custom.scss */
+/* line 107, ../sass/custom/_custom.scss */
 .workarea .container .search {
   width: 100%;
   height: auto;
   float: left;
   padding: 15px;
 }
-/* line 109, ../sass/custom/_custom.scss */
+@media screen and (max-width: 767px) {
+  /* line 107, ../sass/custom/_custom.scss */
+  .workarea .container .search {
+    padding: 15px 0px;
+  }
+}
+/* line 115, ../sass/custom/_custom.scss */
 .workarea .container .search input {
   width: 85%;
   float: left;
   margin-right: 12px;
 }
-/* line 114, ../sass/custom/_custom.scss */
+@media screen and (max-width: 767px) {
+  /* line 115, ../sass/custom/_custom.scss */
+  .workarea .container .search input {
+    margin-bottom: 10px;
+  }
+}
+/* line 123, ../sass/custom/_custom.scss */
 .workarea .container .search .search-list {
   width: 100%;
   height: auto;
   float: left;
   padding: 0px;
 }
-/* line 119, ../sass/custom/_custom.scss */
+/* line 128, ../sass/custom/_custom.scss */
 .workarea .container .search .search-list li {
   list-style: none;
   padding: 10px;
   border: 1px solid #791f7f;
   position: relative;
   margin: 10px 0px;
+  background-color: #f3f3f3;
 }
-/* line 126, ../sass/custom/_custom.scss */
+/* line 135, ../sass/custom/_custom.scss */
 .workarea .container .search .search-list li p {
   text-transform: capitalize;
+  width: 90%;
+  word-break: break-word;
 }
-/* line 129, ../sass/custom/_custom.scss */
+@media screen and (max-width: 767px) {
+  /* line 135, ../sass/custom/_custom.scss */
+  .workarea .container .search .search-list li p {
+    width: 70%;
+    word-break: break-word;
+  }
+}
+/* line 144, ../sass/custom/_custom.scss */
 .workarea .container .search .search-list li button {
   position: absolute;
   top: 50%;
   right: 15px;
 }
-/* line 138, ../sass/custom/_custom.scss */
+/* line 153, ../sass/custom/_custom.scss */
 .workarea .container .registration {
   width: 75%;
   height: auto;
@@ -581,70 +622,71 @@ select option {
   display: block;
 }
 @media screen and (max-width: 767px) {
-  /* line 138, ../sass/custom/_custom.scss */
+  /* line 153, ../sass/custom/_custom.scss */
   .workarea .container .registration {
     width: 100%;
     padding: 15px 0px;
   }
 }
-/* line 149, ../sass/custom/_custom.scss */
+/* line 164, ../sass/custom/_custom.scss */
 .workarea .container .registration h2 {
   margin: 20px 0px;
   color: #791f7f;
 }
-/* line 153, ../sass/custom/_custom.scss */
+/* line 168, ../sass/custom/_custom.scss */
 .workarea .container .registration .category {
   width: 100%;
   height: auto;
   float: left;
 }
-/* line 157, ../sass/custom/_custom.scss */
+/* line 172, ../sass/custom/_custom.scss */
 .workarea .container .registration .category p {
   width: 50%;
   float: left;
   color: #4e4f53;
 }
 @media screen and (max-width: 767px) {
-  /* line 157, ../sass/custom/_custom.scss */
+  /* line 172, ../sass/custom/_custom.scss */
   .workarea .container .registration .category p {
     width: 100%;
   }
 }
-/* line 164, ../sass/custom/_custom.scss */
+/* line 179, ../sass/custom/_custom.scss */
 .workarea .container .registration .category p input {
   margin: 5px;
   cursor: pointer;
 }
-/* line 168, ../sass/custom/_custom.scss */
+/* line 183, ../sass/custom/_custom.scss */
 .workarea .container .registration .category p span {
   font-size: 16px;
 }
-/* line 173, ../sass/custom/_custom.scss */
+/* line 188, ../sass/custom/_custom.scss */
 .workarea .container .registration .form {
   width: 100%;
   height: auto;
   float: left;
 }
-/* line 177, ../sass/custom/_custom.scss */
+/* line 192, ../sass/custom/_custom.scss */
 .workarea .container .registration .form p {
   color: #4e4f53;
   padding: 7px 0px;
   font-size: 18px;
   border-bottom: 1px solid #4e4f53;
 }
-/* line 183, ../sass/custom/_custom.scss */
+/* line 198, ../sass/custom/_custom.scss */
 .workarea .container .registration .form form {
   width: 100%;
   height: auto;
   float: left;
+  padding: 0px;
 }
-/* line 188, ../sass/custom/_custom.scss */
+/* line 204, ../sass/custom/_custom.scss */
 .workarea .container .registration .form form .form-group {
   width: 100%;
   height: auto;
   float: left;
 }
-/* line 192, ../sass/custom/_custom.scss */
+/* line 208, ../sass/custom/_custom.scss */
 .workarea .container .registration .form form .form-group label {
   text-transform: capitalize;
 }
@@ -664,21 +706,27 @@ select option {
 .workarea .container .registration .form form .form-group input:-ms-input-placeholder {
   text-transform: capitalize;
 }
-/* line 201, ../sass/custom/_custom.scss */
+/* line 217, ../sass/custom/_custom.scss */
 .workarea .container .registration .form form input[type=submit] {
   margin: 15px 0px;
 }
-/* line 207, ../sass/custom/_custom.scss */
+/* line 223, ../sass/custom/_custom.scss */
 .workarea .container .contact {
   width: 100%;
   height: 100%;
   float: left;
 }
 
-/* line 217, ../sass/custom/_custom.scss */
+/* line 231, ../sass/custom/_custom.scss */
 footer {
   width: 100%;
   height: auto;
   float: left;
   padding: 15px 0px;
+}
+
+/* line 238, ../sass/custom/_custom.scss */
+.error {
+  color: #f01e4d;
+  font-size: 14px;
 }
