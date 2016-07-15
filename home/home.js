@@ -166,7 +166,7 @@ myApp.controller('RegistrationController', function($scope, ajaxwebservice, $rou
             $scope.show_user = true;
             return false;
         }else if ($scope.userForm.$valid) {
-        	var url = 'https://ap2.salesforce.com/services/apexrest/EC_ElderCare';
+        	var url = 'https://ap2.salesforce.com/services/apexrest/createCandidate';
             $scope.accountData.candCity = 'Hyderabad';
             $scope.accountData.candCountry = 'India';
             $scope.accountData.candState = 'TS';
