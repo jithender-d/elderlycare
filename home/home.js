@@ -4,9 +4,6 @@ myApp.controller('HomeController', function($scope, ajaxwebservice) {
 
 	$scope.getAccessToken = function() {
 		var res = ajaxwebservice.getAccessToken();
-		if(res !== '') {
-			localStorage.setItem('authInfo', JSON.stringify(res.access_token));
-		}
 	};
 	$scope.getAccessToken();
 });
@@ -19,7 +16,7 @@ myApp.controller('RegistrationController', function($scope) {
         $scope.show = false; // error message display flag
         $scope.sub_show = false; //submit flag
 
-        if($scope.accountForm.name.$error.required){
+        if($scope.accountForm.candName.$error.required){
             $scope.error_msg = 'Please enter Organization name.';
             $scope.show = true;
             return false;
@@ -180,12 +177,9 @@ myApp.controller('SearchController', function($scope, ajaxwebservice) {
 	var url = 'https://ap2.salesforce.com/services/apexrest/EC_ElderCare';
 	
 	$scope.searchHomes = function(zipcode) {
-		var postdata = {};
-		var token = localStorage.getItem('authInfo');
-		console.log(token);
-		postdata.zipcode = $scope.postalCode; 
-		var res = ajaxwebservice.getPost('POST',token,url,postdata);
-
+		var postdata = null;
+	  		
+		var res = ajaxwebservice.getPost('POST',url,postdata);
 	};
 
 	$scope.searchHomes();
