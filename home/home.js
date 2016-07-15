@@ -62,8 +62,8 @@ myApp.controller('RegistrationController', function($scope, ajaxwebservice, $rou
             var postData = {"postd": $scope.org,"url":url,"met":'POST',"token":token};
             var subUser = ajaxwebservice.getPost(postData, 2).then(function(response) {
 	            $scope.homes = response.data;
-	            alert('Oladge home created successfully.')
-	            location.reload();
+	            alert('Old Age Organization Created Successfully.')
+	            location.href = '/home';
 	        });
             
     	}
@@ -174,12 +174,13 @@ myApp.controller('RegistrationController', function($scope, ajaxwebservice, $rou
             $scope.accountData.referralCountry = 'India';
             $scope.accountData.referralState = 'TS';
             $scope.accountData.homeId = $routeParams.homeId;
-
+            console.log('kdjsfjkdskjf');
            	var token = localStorage.getItem('authInfo');
             var postData = {"postd": $scope.accountData,"url":url,"met":'POST',"token":token};
             var subUser = ajaxwebservice.getPost(postData, 2).then(function(response) {
-	            $scope.homes = response.data;
+            	console.log(response);
 	            alert('User joined successfully.');
+	            location.href = '/home';
 	        });
     	}
     }
@@ -188,7 +189,7 @@ myApp.controller('RegistrationController', function($scope, ajaxwebservice, $rou
 
 myApp.controller('SearchController', function($scope, ajaxwebservice) {
 	var url = 'https://ap2.salesforce.com/services/apexrest/EC_ElderCare';
-	
+	$scope.footer = true;
 	$scope.searchHomes = function() {
 		var token = localStorage.getItem('authInfo');
 		var dat = null;
