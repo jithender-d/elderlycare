@@ -62,8 +62,8 @@ myApp.controller('RegistrationController', function($scope, ajaxwebservice, $rou
             var postData = {"postd": $scope.org,"url":url,"met":'POST',"token":token};
             var subUser = ajaxwebservice.getPost(postData, 2).then(function(response) {
 	            $scope.homes = response.data;
-	            console.log($scope.homes);
-	            console.log($scope.homes.status);
+	            alert('Oladge home created successfully.')
+	            location.reload();
 	        });
             
     	}
@@ -177,9 +177,9 @@ myApp.controller('RegistrationController', function($scope, ajaxwebservice, $rou
 
            	var token = localStorage.getItem('authInfo');
             var postData = {"postd": $scope.accountData,"url":url,"met":'POST',"token":token};
-            var subUser = ajaxwebservice.getPost(postData, 3).then(function(response) {
+            var subUser = ajaxwebservice.getPost(postData, 2).then(function(response) {
 	            $scope.homes = response.data;
-	            console.log($scope.homes);
+	            alert('User joined successfully.');
 	        });
     	}
     }
