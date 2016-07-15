@@ -7,7 +7,6 @@
                 <p> <input type="radio" name="gender" ng-model="regUser" value="1"><span>User</span></p>
                 <p><input type="radio" name="gender" ng-model="regUser" value="2"> <span>Old age organisation</span></p>
             </div> -->
-            
             <div class="form">
                 <div ng-show="user">
                     <form name="userForm" class="container-fluid" novalidate>
@@ -16,20 +15,20 @@
                         <p>Candidate details</p>
                         <div class="form-group">
                             <label>Name:</label>
-                            <input type="text" placeholder="name" ng-model="accountData.name" name="name" maxlength="150" required/></div>
+                            <input type="text" placeholder="name" ng-model="accountData.candName" name="name" maxlength="150" required/></div>
                         <div class="form-group">
                             <label>Age:</label>
-                            <input type="text" placeholder="age" ng-model="accountData.age" name="age" maxlength="3" required/>
+                            <input type="text" placeholder="age" ng-model="accountData.candAge" name="age" maxlength="3" required/>
                         </div>
                         <div class="form-group">
                             <label>Address:</label>
-                            <input type="text" placeholder="Address" ng-model="accountData.address" name="address" maxlength="300" required></div>
+                            <input type="text" placeholder="Address" ng-model="accountData.candStreet" name="address" maxlength="300" required></div>
                         <div class="form-group">
                             <label>mobile number:</label>
-                            <input type="text" placeholder="mobile number" ng-model="accountData.mobile" name="mobile" minlength="10" maxlength="10" required>
+                            <input type="text" placeholder="mobile number" ng-model="accountData.candMobileNumber" name="mobile" minlength="10" maxlength="10" required>
                         </div>
                         <div class="form-group"><label>id card type:</label>
-                            <select ng-model="accountData.card" name="card" required>
+                            <select ng-model="accountData.candIdType" name="card" required>
                                 <option value="voterc   ard">Voter Card</option>
                                 <option value="aadhaarcard">Aadhaar Card</option>
                                 <option value="rationcard">Ration Card</option>
@@ -39,18 +38,18 @@
                         </div>
                         <div class="form-group">
                             <label>id card number:</label>
-                            <input type="text" placeholder="Id card" ng-model="accountData.cardnum" name="cardnum" minlength="10" maxlength="20" required>
+                            <input type="text" placeholder="Id card" ng-model="accountData.candIdNo" name="cardnum" minlength="10" maxlength="20" required>
                         </div>
                         <div class="form-group">
                             <label>gender:</label>
-                            <select ng-model="accountData.gender" name="gender" required>
+                            <select ng-model="accountData.candGender" name="gender" required>
                             <option value="male">male</option>
                             <option value="female">female</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label>Zipcode:</label>
-                            <input type="text" placeholder="Postal Code" ng-model="accountData.zipcode" name="zipcode" minlength="6" maxlength="6" required>
+                            <input type="text" placeholder="Postal Code" ng-model="accountData.candZipcode" name="zipcode" minlength="6" maxlength="6" required>
                         </div>
                     </div>
 
@@ -58,7 +57,7 @@
                         <p>Referal details</p>
                         <div class="form-group">
                             <label>Name:</label>
-                            <input type="text" placeholder="name" ng-model="accountData.refname" name="refname" maxlength="150" required>
+                            <input type="text" placeholder="name" ng-model="accountData.referralName" name="refname" maxlength="150" required>
                         </div>
                         <div class="form-group">
                             <label>Age:</label>
@@ -66,15 +65,15 @@
                         </div>
                         <div class="form-group">
                             <label>Address:</label>
-                            <input type="text" placeholder="address" ng-model="accountData.refaddrs" name="refaddrs" maxlength="300" required>
+                            <input type="text" placeholder="address" ng-model="accountData.referralStreet" name="refaddrs" maxlength="300" required>
                         </div>
                         <div class="form-group">
                             <label>mobile number:</label>
-                            <input type="text" placeholder="mobile number" ng-model="accountData.refmobile" name="refmobile" minlength="10" maxlength="10" required>
+                            <input type="text" placeholder="mobile number" ng-model="accountData.referralMobNo" name="refmobile" minlength="10" maxlength="10" required>
                         </div>
                         <div class="form-group">
                             <label>id card type:</label>
-                            <select ng-model="accountData.refidtype" name="refidtype" required>
+                            <select ng-model="accountData.referralIdType" name="refidtype" required>
                                 <option value="votercard">Voter Card</option>
                                 <option value="aadhaarcard">Aadhaar Card</option>
                                 <option value="rationcard">Ration Card</option>
@@ -84,7 +83,7 @@
                         </div>
                         <div class="form-group">
                             <label>id card number:</label>
-                            <input type="text" placeholder="Id card number" ng-model="accountData.refidcard" name="refidcard" minlength="10" maxlength="20" required>
+                            <input type="text" placeholder="Id card number" ng-model="accountData.referralIdNo" name="refidcard" minlength="10" maxlength="20" required>
                         </div>
                         <div class="form-group">
                             <label>gender:</label>
@@ -95,7 +94,7 @@
                         </div>
                         <div class="form-group">
                             <label>Zipcode:</label>
-                            <input type="text" placeholder="Zipcode" ng-model="accountData.refzipcode" name="refzipcode" minlength="6" maxlength="6" required>
+                            <input type="text" placeholder="Zipcode" ng-model="accountData.referralZipcode" name="refzipcode" minlength="6" maxlength="6" required>
                         </div>
                     </div>
                     <input type="submit" value="Submit" ng-click="validate_user()">
@@ -106,24 +105,26 @@
                     <form name="accountForm" class="container-fluid" novalidate>
                     <div class="error" ng-show="show"><span>{{error_msg}}</span></div>
                     <p>Organisation details</p>
+                    
                     <div class="form-group">
                         <label>Name:</label>
                         <input type="text" ng-model="org.name" placeholder="name" name="name" maxlength="150" required/>
                     </div>
                     <div class="form-group">
                         <label>location:</label>
-                        <input type="text" placeholder="location" ng-model="org.location" name="location" maxlength="150" required/>
+                        <input type="text" placeholder="location" ng-model="org.city" name="location" maxlength="150" required/>
                     </div>
                     <div class="form-group">
-                        <label>Capacity:</label>
-                        <input type="text" placeholder="Capacity" ng-model="org.capacity" name="capacity" maxlength="4" required></div>
-                    <div class="form-group">
                         <label>mobile number:</label>
-                        <input type="text" placeholder="mobile number" ng-model="org.mobile" name="mobile" minlength="10" maxlength="10" required> 
+                        <input type="text" placeholder="mobile number" ng-model="org.contactNumber" name="mobile" minlength="10" maxlength="10" required> 
                     </div>
                     <div class="form-group">
                         <label>Address:</label>
-                        <input type="text" placeholder="Address" ng-model="org.address" name="address" maxlength="150" required>
+                        <input type="text" placeholder="Address" ng-model="org.street" name="address" maxlength="150" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Zipcode:</label>
+                        <input type="text" placeholder="Zipcode" ng-model="org.zipcode" name="zipcode" maxlength="6" minlength="6"required>
                     </div>
                     <input type="submit" value="Submit" ng-click="validate_organization()">
                 </div>

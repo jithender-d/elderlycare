@@ -13,6 +13,7 @@ myApp.controller('HomeController', function($scope, ajaxwebservice) {
 
 myApp.controller('RegistrationController', function($scope) {
 	$scope.regUser = '1';
+	$scope.accountData = {};
 	$scope.validate_organization = function () {
        	$scope.error_msg = '';  //error messages store 
         $scope.show = false; // error message display flag
@@ -34,10 +35,6 @@ myApp.controller('RegistrationController', function($scope) {
             $scope.error_msg = 'location length should not be greater than 150.';
             $scope.show = true;
             return false;
-        }else if($scope.accountForm.capacity.$error.required){
-            $scope.error_msg = 'Please enter capacity.';
-            $scope.show = true;
-            return false;
         }else if($scope.accountForm.mobile.$error.required){
             $scope.error_msg = 'Please enter Mobile number.';
             $scope.show = true;
@@ -51,9 +48,19 @@ myApp.controller('RegistrationController', function($scope) {
             $scope.error_msg = 'Please enter Address.';
             $scope.show = true;
             return false;
+        }else if($scope.accountForm.zipcode.$error.required){
+            $scope.error_msg = 'Please enter Zipcode.';
+            $scope.show = true;
+            return false;
+        }else if($scope.accountForm.zipcode.$invalid){
+        	$scope.error_msg = 'Zipcode length should be 6.';
+            $scope.show = true;
+            return false;
         }
         else if ($scope.accountForm.$valid) {
-            alert('okk');
+            $scope.org.country = 'India';
+            $scope.org.state = 'TS';
+            console.log($scope.org);
     	}
     }
 
@@ -154,8 +161,14 @@ myApp.controller('RegistrationController', function($scope) {
             $scope.show_user = true;
             return false;
         }else if ($scope.userForm.$valid) {
-            alert('okk');
-            console.log(accountData)
+        	var url = 'https://ap2.salesforce.com/services/apexrest/EC_ElderCare';
+            $scope.accountData.candCity = 'Hyderabad';
+            $scope.accountData.candCountry = 'India';
+            $scope.accountData.candState = 'TS';
+            $scope.accountData.referralCity = 'Hyderabad';
+            $scope.accountData.referralCountry = 'India';
+            $scope.accountData.referralState = 'TS';
+            var res = ajaxwebservice.getPost('POST',token,url,postdata);
     	}
     }
     
