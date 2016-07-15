@@ -20,12 +20,12 @@ myApp.config(['$routeProvider', function($routeProvider) {
 		// activetab: 'home'
 	});
 
-	$routeProvider.when('/registrationUser', {
+	$routeProvider.when('/registrationUser/:homeId', {
 		templateUrl: 'home/templates/register.html',
 		controller: 'RegistrationController',
 		// activetab: 'home'
 	});
-	$routeProvider.when('/registrationOrganization', {
+	$routeProvider.when('/registrationOrganization/:orgId', {
 		templateUrl: 'home/templates/register.html',
 		controller: 'RegistrationController',
 		// activetab: 'home'
@@ -52,10 +52,10 @@ myApp.config(['$routeProvider', function($routeProvider) {
     $rootScope.footer = true;
     
     $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
-        if(current.$$route && ($location.path() == '/registrationOrganization')){
+        if(current.$$route && ($location.path().indexOf('registrationOrganization') > -1)){
             $rootScope.organization = true;
     		$rootScope.user = false;
-        }else if(current.$$route && ($location.path() == '/registrationUser')){
+        }else if(current.$$route && ($location.path().indexOf('registrationUser') > -1)){
         	$rootScope.organization = false;
     		$rootScope.user = true;
         }

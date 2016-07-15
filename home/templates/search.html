@@ -2,23 +2,16 @@
     <div class="container">
         <div class="search">
             <input type="search" placeholder="Search By Area" ng-model="postalCode" />
-            <button type="button">Search</button> 
+            <button type="button" ng-click="searchHomes()">Search</button> 
+
+           
             <ul class="search-list">
-               <li>
-                     <p>name:</p>
-                     <p>location</p>
-                     <p>Address</p>
-                     <a href="#/registrationUser"><button class="pull-right">Join</button></a>
-               </li><li>
-                     <p>name:</p>
-                     <p>location</p>
-                     <p>Address</p>
-                     <a href="#/registrationUser"><button class="pull-right">Join</button></a>
-               </li><li>
-                     <p>name:</p>
-                     <p>location</p>
-                     <p>Address</p>
-                     <a href="#/registrationUser"><button class="pull-right">Join</button></a>
+               <li ng-repeat="home in homes track by $index ">
+
+                     <p>name:{{home.Name}}</p>
+                     <p>location: {{home.City__c}} | {{home.State__c}} | {{home.Zipcode__c}}  </p>
+                     <p>Contact No: {{home.Contact_Number__c}}</p>
+                     <a href="#/registrationUser/{{home.Id}}"><button class="pull-right">Join</button></a>
                </li>
             </ul>
         </div>

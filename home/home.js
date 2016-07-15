@@ -8,8 +8,7 @@ myApp.controller('HomeController', function($scope, ajaxwebservice) {
 	$scope.getAccessToken();
 });
 
-myApp.controller('RegistrationController', function($scope, ajaxwebservice) {
-	$scope.regUser = '1';
+myApp.controller('RegistrationController', function($scope, ajaxwebservice, $routeParams) {
 	$scope.accountData = {};
 	$scope.validate_organization = function () {
        	$scope.error_msg = '';  //error messages store 
@@ -174,6 +173,7 @@ myApp.controller('RegistrationController', function($scope, ajaxwebservice) {
             $scope.accountData.referralCity = 'Hyderabad';
             $scope.accountData.referralCountry = 'India';
             $scope.accountData.referralState = 'TS';
+            $scope.accountData.homeId = $routeParams.homeId;
 
            	var token = localStorage.getItem('authInfo');
             var postData = {"postd": $scope.accountData,"url":url,"met":'POST',"token":token};
@@ -189,14 +189,18 @@ myApp.controller('RegistrationController', function($scope, ajaxwebservice) {
 myApp.controller('SearchController', function($scope, ajaxwebservice) {
 	var url = 'https://ap2.salesforce.com/services/apexrest/EC_ElderCare';
 	
-	$scope.searchHomes = function(zipcode) {
+	$scope.searchHomes = function() {
 		var token = localStorage.getItem('authInfo');
 		var dat = null;
+		if($scope.postalCode !== undefined) {
+			console.log('jith');
+			dat = $scope.postalCode;
+		}
 		var postData = {"postd":{'zipcode':dat},"url":url,"met":'POST',"token":token};
        	var res = ajaxwebservice.getPost(postData, 2).then(function(response) {
             $scope.homes = response.data;
-            console.log($scope.homes);
         });
+       	
 	};
 
 	$scope.searchHomes();
