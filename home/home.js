@@ -216,6 +216,11 @@ myApp.controller('SearchController', function($scope, ajaxwebservice) {
 		}
 		var postData = {"postd":{'zipcode':dat},"url":url,"met":'POST',"token":token};
        	var res = ajaxwebservice.getPost(postData, 2).then(function(response) {
+            if(response.data.length == 0) {
+                $scope.displayText = 'No records found.';
+            } else {
+                $scope.displayText = '';
+            }
             $scope.homes = response.data;
         });
     };

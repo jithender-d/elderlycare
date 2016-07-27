@@ -7,8 +7,8 @@ myApp.factory('ajaxwebservice', function($http,$location) {
     
     factory.getPost = function(dat, flag) {
         return $http({
-            // url: 'http://10.10.6.121/accessToken.php?flag='+flag,
-            url: 'http://dev.popcornapps.com/libstore/accessToken.php?flag='+flag,
+            url: 'http://10.10.6.83/accessToken.php?flag='+flag,
+            // url: 'http://dev.popcornapps.com/libstore/accessToken.php?flag='+flag,
             data: JSON.stringify(dat),
             method: 'POST'
         })
@@ -17,8 +17,8 @@ myApp.factory('ajaxwebservice', function($http,$location) {
 
     factory.getAccessToken = function() {
         return $http({
-            url: 'http://dev.popcornapps.com/libstore/accessToken.php?flag=1',
-            // url: 'http://10.10.6.121/accessToken.php?flag=1',
+            // url: 'http://dev.popcornapps.com/libstore/accessToken.php?flag=1',
+            url: 'http://10.10.6.83/accessToken.php?flag=1',
         })
         .then(function(response) {
             localStorage.setItem('authInfo', response.data['access_token']);
